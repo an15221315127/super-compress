@@ -5,6 +5,8 @@
 ### webpack.config.js
 
 ```js
+npm install super-compress
+
 new ImageCompress({
   dir: path.resolve("src/assets"), // 需要监听的文件目录
   min: 1024 * 50, // 最小size不作处理
