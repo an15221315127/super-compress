@@ -1,4 +1,4 @@
-# ImageCompress
+# super-compress
 
 ## 基于 webpack 的一款图片压缩插件
 
