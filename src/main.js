@@ -76,7 +76,7 @@ class ImageCompress {
         })
         return true
     }
-    constructor({ dir, min, max, key, immediate }) {
+    constructor({ dir, min, max, key, immediate } = { dir: "static", min: 1024 * 50, max: 1024 * 1024 * 2, key: "", immediate: false }) {
         this.dir = dir // 需要观察的目录
         this.min = min // 小于min则不会处理压缩
         this.max = max  // 大于max则不会处理压缩
