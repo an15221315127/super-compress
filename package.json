@@ -1,0 +1,36 @@
+{
+  "name": "super-compress",
+  "version": "1.0.8",
+  "description": "开发时自动压缩图片的webpack插件",
+  "main": "src/main.js",
+  "scripts": {
+    "dev": "node server.js",
+    "build": "npx webpack --progress"
+  },
+  "types": "types/index.d.ts",
+  "keywords": [
+    "webpack",
+    "image",
+    "tinypng",
+    "tinyjpg",
+    "compress",
+    "optimize",
+    "images",
+    "api"
+  ],
+  "bugs": {
+    "email": "2890815038@qq.com",
+    "url": "https://github.com/an15221315127/super-compress/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/an15221315127/super-compress.git"
+  },
+  "homepage": "https://github.com/an15221315127/super-compress",
+  "author": "2890815038@qq.com",
+  "license": "ISC",
+  "dependencies": {
+    "tinify": "^1.6.0-beta.2",
+    "node-watch": "^0.7.1"
+  }
+}

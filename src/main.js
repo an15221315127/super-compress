@@ -28,7 +28,7 @@ class ImageCompress {
         return jsonFiles;
     }
     apply(compiler) {
-
+        if (process.env.NODE_ENV !== "development") return;
         compiler.hooks.emit.tap("assets", () => {
             if (this.immediate) {
                 const res = this.getJsonFiles(this.dir)

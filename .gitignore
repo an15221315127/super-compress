@@ -4,4 +4,4 @@ node_modules
 .LSOverride
 
 yarn-error.log
-package.json
+package-lock.json
