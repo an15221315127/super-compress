@@ -1,6 +1,6 @@
 # super-compress
 
-## 基于 webpack plugin 的一款图片压缩插件
+## 基于 webpack plugin 的一款图片压缩插件，对接的是 tinypng.com 的图片压缩 api
 
 ```bash
 npm install --save-dev super-compress
@@ -27,7 +27,7 @@ module.exports = {
     new ImageCompress({
       min: 1024 * 50, // 最小阈值
       max: 1024 * 1024 * 20, // 最大阈值
-      key: "CX6j0LbSlRKt1X31DR44tNT67TmyDKCf", // tinypng 密钥 tinypng.com 获取
+      key: "CX6j0LbSlRKt1X31DR44tNT67TmyDKCf", // tinypng 密钥 ,需要自己在tinypng.com中去申请密钥
       immediate: true, // 初始化时是否需要压缩已存在目录里的图片
     }),
   ],
@@ -37,6 +37,8 @@ module.exports = {
 #### vue.config.js
 
 ```js
+const ImageCompress = require("super-compress");
+module.exports = {
   configureWebpack: {
     plugins: [
       new ImageCompress({
@@ -44,9 +46,10 @@ module.exports = {
         max: 1024 * 1024 * 20, // 最大阈值
         key: "CX6j0LbSlRKt1X31DR44tNT67TmyDKCf", // tinypng 密钥 tinypng.com 获取
         immediate: true, // 初始化时是否需要压缩已存在目录里的图片
-    }),
-    ]
+      }),
+    ],
   },
+};
 ```
 
 // 注意：如果 immediate 设置为 true，则不可将.map 结尾的文件在.gitignore 中过滤，因为考虑到项目多人开发时.map 不同步会导致图片重复压缩的问题
