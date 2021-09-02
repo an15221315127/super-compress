@@ -3,7 +3,8 @@
 ## 基于 webpack plugin 的一款图片压缩插件
 
 ```bash
-npm install super-compress
+npm install --save-dev super-compress
+
 ```
 
 ### 参数介绍
