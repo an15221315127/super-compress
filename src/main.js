@@ -69,6 +69,7 @@ class ImageCompress {
         if (evt !== "update" || fs.existsSync(fileMap)) return;
         let stat = fs.statSync(file)
         if (stat.size < this.min || stat.size > this.max) return;
+        fs.writeFileSync(fileMap, `${file} is loading`)
         tinify.fromFile(file).toFile(file).then(() => {
             console.log(`${file}压缩成功`)
             fs.writeFileSync(fileMap, `${file} is compressed`)
