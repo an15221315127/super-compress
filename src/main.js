@@ -28,7 +28,7 @@ class ImageCompress {
         return jsonFiles;
     }
     apply(compiler) {
-        if (process.env.NODE_ENV !== "development") return;
+        if (process.env.NODE_ENV !== this.mode) return;
         compiler.hooks.emit.tap("assets", () => {
             if (this.immediate) {
                 const res = this.getJsonFiles(this.dir)
@@ -79,11 +79,12 @@ class ImageCompress {
         })
         return true
     }
-    constructor({ dir, min, max, key, immediate } = { dir: "static", min: 1024 * 50, max: 1024 * 1024 * 2, key: "", immediate: false }) {
+    constructor({ dir, min, max, key, immediate, mode } = { dir: "static", min: 1024 * 50, max: 1024 * 1024 * 2, key: "", immediate: false, mode: "development" }) {
         this.dir = dir // 需要观察的目录
         this.min = min // 小于min则不会处理压缩
         this.max = max  // 大于max则不会处理压缩
         this.immediate = immediate // 初始化时是否需要压缩已存在目录里的图片
+        this.mode = mode
         tinify.key = key;
     }
 }
