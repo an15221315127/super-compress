@@ -10,11 +10,11 @@ npm install --save-dev super-compress
 ### 参数介绍
 
 | 参数      |    类型 |      默认值       | 描述                                  |
-| --------- | ------: | :---------------: | ------------------------------------- | --- |
+| --------- | ------: | :---------------: | ------------------------------------- |
 | min       |  number |    1024 \* 50     | 最小值                                |
 | max       |  number | 1024 \* 1024 \* 2 | 最大值                                |
 | key       |  string |        ""         | 密钥                                  |
-| key       |  string |   "development"   | 执行环境变量 development \|production |     |
+| key       |  string |   "development"   | 执行环境变量 development \|production |
 | immediate | boolean |       false       | 启动时是否压缩当前目录未压缩图片      |
 
 ### 应用案例
