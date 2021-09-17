@@ -11,6 +11,7 @@ npm install --save-dev super-compress
 
 | 参数      |    类型 |      默认值       | 描述                                  |
 | --------- | ------: | :---------------: | ------------------------------------- |
+| dir       |  string |    src/assets     | 需要观察的静态资源目录                                |
 | min       |  number |    1024 \* 50     | 最小值                                |
 | max       |  number | 1024 \* 1024 \* 2 | 最大值                                |
 | key       |  string |        ""         | 密钥                                  |
@@ -26,6 +27,7 @@ const ImageCompress = require("super-compress");
 module.exports = {
   plugins: [
     new ImageCompress({
+      dir:"src/assets",  
       min: 1024 * 50, // 最小阈值
       max: 1024 * 1024 * 20, // 最大阈值
       key: "CX6j0LbSlRKt1X31DR44tNT67TmyDKCf", // tinypng 密钥 ,需要自己在tinypng.com中去申请密钥
@@ -41,17 +43,18 @@ module.exports = {
 ```js
 const ImageCompress = require("super-compress");
 module.exports = {
-  configureWebpack: {
-    plugins: [
-      new ImageCompress({
-        min: 1024 * 50, // 最小阈值
-        max: 1024 * 1024 * 20, // 最大阈值
-        key: "CX6j0LbSlRKt1X31DR44tNT67TmyDKCf", // tinypng 密钥 tinypng.com 获取
-        mode: "development",
-        immediate: true, // 初始化时是否需要压缩已存在目录里的图片
-      }),
-    ],
-  },
+    configureWebpack: {
+        plugins: [
+            new ImageCompress({
+                dir:"src/assets",
+                min: 1024 * 50, // 最小阈值
+                max: 1024 * 1024 * 20, // 最大阈值
+                key: "CX6j0LbSlRKt1X31DR44tNT67TmyDKCf", // tinypng 密钥 tinypng.com 获取
+                mode: "development",
+                immediate: true, // 初始化时是否需要压缩已存在目录里的图片
+            }),
+        ],
+    },
 };
 ```
 
