@@ -1,6 +1,6 @@
 {
   "name": "super-compress",
-  "version": "1.1.8",
+  "version": "1.1.9",
   "description": "开发时自动压缩图片的webpack插件",
   "main": "src/main.js",
   "scripts": {
