@@ -74,8 +74,9 @@ class ImageCompress {
             console.log(`${file}压缩成功`)
             fs.writeFileSync(fileMap, `${file} is compressed`)
         }).catch(err => {
-            console.log(`${file}压缩成失败`)
-            fs.writeFileSync(fileMap, `${file} is ${err}`)
+            fs.unlink(fileMap, () => {
+                console.log(`${fileMap}已被删除`)
+            })
         })
         return true
     }
